@@ -12,14 +12,19 @@ import { useTheme } from "next-themes";
 import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
+import { SidebarTrigger, useSidebar } from "./ui/sidebar";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const { toggleSidebar } = useSidebar();
   return (
     <nav className="p-4 flex items-center justify-between">
       {/*Left */}
       {/*  AppSidebar */}
-      collapseButton
+      <SidebarTrigger />
+      {/* <Button variant="outline" onClick={toggleSidebar}>
+        Custom Button
+      </Button> */}
       {/*Right */}
       <div className="flex items-center gap-4">
         <Link href="/">Dashboard</Link>
