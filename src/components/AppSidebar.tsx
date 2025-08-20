@@ -79,12 +79,15 @@ const AppSidebar = () => {
             <SidebarMenuButton asChild>
               <Link href="/">
                 <Image
-                  src="bayrak.svg"
+                  src="/bayrak.svg"
                   alt="logo"
                   width={20}
                   height={20}
                   className="rounded-md"
                 />
+                <p className="text-sm text-muted-foreground ">
+                  Thyster's Dashboard
+                </p>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
