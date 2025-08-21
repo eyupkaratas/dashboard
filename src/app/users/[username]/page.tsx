@@ -1,5 +1,7 @@
+import AppLineChart from "@/components/AppLineChart";
 import CardList from "@/components/CardList";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import {
   Breadcrumb,
@@ -37,7 +39,7 @@ const SingleUserPage = () => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div className="mt-4 flext flex-col xl:flex-row gap-8">
+      <div className="mt-4 flex flex-col xl:flex-row gap-8">
         {/* LEFT */}
         <div className="w-full xl:w-1/3 space-y-6">
           {/* USER BADGES CONTAINER */}
@@ -152,11 +154,30 @@ const SingleUserPage = () => {
           </div>
         </div>
         {/* RIGHT */}
-        <div className="w-full xl:w-2/3 space-y-6"></div>
-        {/* USER CARD CONTAINER */}
-        <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
-        {/* CHART CONTAINER */}
-        <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+        <div className="w-full xl:w-2/3 space-y-6">
+          {/* USER CARD CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="https://github.com/eyupkaratas.png?" />
+                <AvatarFallback>EK</AvatarFallback>
+              </Avatar>
+
+              <h1 className="text-lg font-semibold">Eyüp Karataş</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Optio
+              dignissimos assumenda suscipit totam obcaecati, est harum
+              aspernatur nam? Obcaecati saepe aut provident impedit fugit
+              voluptates, tempora nesciunt sequi ipsa at!
+            </p>
+          </div>
+          {/* CHART CONTAINER */}
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <h1 className="text-xl font-semibold">User Activity</h1>
+            <AppLineChart />
+          </div>
+        </div>
       </div>
     </div>
   );
